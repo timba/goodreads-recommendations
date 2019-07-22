@@ -7,6 +7,12 @@ for a given user find all books marked as “read” and choose top 10 by averag
 books excluding books that user is currently reading. Uses “similarity” definition provided by
 Goodreads API (each book has assigned list of "similar books").
 
+## Inconsistent rating information note
+
+During implementation a bug was found in Goodreads API call `book/show` which returns similar books with incorrect 
+ratings information. This issue has been reported on developers discussion board https://www.goodreads.com/topic/show/19969016-similar-books-rating-info-mismatch-in-book-show-response
+Until this issue fixed, incorrect recommendations returned. There are few chances to avoid this by calling book info for each "similar book" recommendation because full data obtaining will require a tramendous amount of time.
+
 ## Links
 
 * [API Documentation](https://www.goodreads.com/api/index)
