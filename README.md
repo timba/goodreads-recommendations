@@ -7,6 +7,10 @@ for a given user find all books marked as “read” and choose top 10 by averag
 books excluding books that user is currently reading. Uses “similarity” definition provided by
 Goodreads API (each book has assigned list of "similar books").
 
+## Async version
+
+There exists asynchronous version implementation of this client. Please checkout branch `aleph-cli` for more details.
+
 ## Inconsistent rating information note
 
 During implementation a bug was found in Goodreads API call `book/show` which returns similar books with incorrect 
