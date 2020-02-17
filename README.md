@@ -35,6 +35,23 @@ Run using `lein`:
     $ lein run <TOKEN> -k <API-KEY> [<OPTIONS>]
 ```
 
+Where:
+
+ - `<TOKEN>` is ID of Goodreads user. The ID could be found in user's profile URL: https://www.goodreads.com/user/show/XXX-user-name 
+ Here, `XXX` is user ID.
+
+ - `<API-KEY>` is API key to access Goodreads API. To get this key, one needs to be Googlereads user and follow this URL: https://www.goodreads.com/api/keys
+
+ - `<OPTIONS>` optional config params.
+
+ To see all params use this command:
+
+```shell
+    $ lein run -- -h
+```
+
+Please note that the program limits its execution by timeout which by default is 5000 ms. The GR API is relatively slow, and often the program breaks by timeout. Timeout could changed via optional `-t` parameter: `-t 30000` where time is in milliseconds.
+
 Compile and run from JAR:
 
 ```shell
@@ -42,8 +59,4 @@ Compile and run from JAR:
     $ java -jar target/uberjar/goodreads-0.1.0-SNAPSHOT-standalone.jar <TOKEN> -k <API-KEY> [<OPTIONS>]
 ```
 
-## License
-
-Proprietary.
-
-Copyright © 2019
+JAR accepts all the same arguments as lein version does.
